@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
+import library.Core;
+
 class GRESTServlet extends HttpServlet implements ResourceConnector {
 
     static final String INC_SERVLET_PATH = "javax.servlet.include.servlet_path"
@@ -34,6 +36,9 @@ class GRESTServlet extends HttpServlet implements ResourceConnector {
         gse = new GroovyScriptEngine(this)
         gse.config.sourceEncoding = "UTF-8"
         prefix1 = servletContext.getResource("/").toExternalForm()
+		
+		//CORE INSIDE
+		Core.CORE()
     }
 
     @CompileStatic

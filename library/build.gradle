@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'idea'
+
+group = 'com.kinderjava.java'
+version = "1.0.0-SNAPSHOT"
+project.ext.packaging = "jar"
+
+repositories {
+     maven { url "http://repository.codehaus.org" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+configurations {
+    provided { transitive = false }
+}
+
+sourceSets.main.compileClasspath += configurations.provided
